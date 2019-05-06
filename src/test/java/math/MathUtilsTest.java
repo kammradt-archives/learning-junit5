@@ -1,6 +1,8 @@
 package math;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -141,4 +143,17 @@ class MathUtilsTest {
     void disabledTest(){
         fail("This test will fail if I remove the @Disabled");
     }
+
+    @Test
+    @EnabledOnOs(OS.WINDOWS)
+    void runOnlyOnWindows(){
+        System.out.println("Run only won WindowsOS.");
+    }
+
+    @Test
+    @EnabledOnOs(OS.LINUX)
+    void runOnlyOnLinux(){
+        System.out.println("Run only won LinuxOS.");
+    }
+
 }
