@@ -17,6 +17,7 @@ public class MathUtils {
     public double divide(double a, double b){
         return a / b;
     }
+
     public double calculateCircleArea(double radius){
         return Math.PI * (radius * radius);
     }
