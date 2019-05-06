@@ -136,24 +136,4 @@ class MathUtilsTest {
                 "Should return right circle area");
 
     }
-
-    @Test
-    @Disabled
-    @DisplayName("Test that I don't want to run because it will fail, lets skip")
-    void disabledTest(){
-        fail("This test will fail if I remove the @Disabled");
-    }
-
-    @Test
-    @EnabledOnOs(OS.WINDOWS)
-    void runOnlyOnWindows(){
-        System.out.println("Run only won WindowsOS.");
-    }
-
-    @Test
-    @EnabledOnOs(OS.LINUX)
-    void runOnlyOnLinux(){
-        System.out.println("Run only won LinuxOS.");
-    }
-
 }
