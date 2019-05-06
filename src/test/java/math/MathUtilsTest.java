@@ -1,8 +1,6 @@
 package math;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,6 +24,7 @@ class MathUtilsTest {
     }
 
     @Test
+    @DisplayName("Adding two positive numbers")
     void testAddPositives() {
         double expected = 2;
         double actual = mathUtils.add(1, 1);
@@ -136,4 +135,10 @@ class MathUtilsTest {
 
     }
 
+    @Test
+    @Disabled
+    @DisplayName("Test that I don't want to run because it will fail, lets skip")
+    void disabledTest(){
+        fail("This test will fail if I remove the @Disabled");
+    }
 }
