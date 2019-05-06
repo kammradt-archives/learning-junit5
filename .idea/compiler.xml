@@ -9,8 +9,5 @@
         <module name="learning-junit5" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="learning-junit5" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
