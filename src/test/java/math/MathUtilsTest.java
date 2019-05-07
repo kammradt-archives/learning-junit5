@@ -54,33 +54,18 @@ class MathUtilsTest {
         assertEquals(expected, actual,
                 "Should subtract two numbers.");
     }
-
+    
     @Test
-    void testSubtractPositives() {
-        double expected = 0;
-        double actual = mathUtils.subtract(1, 1);
-
-        assertEquals(expected, actual,
-                "Should subtract two positive numbers.");
+    void testMultiplyAssertAll() {
+        assertAll(
+                () -> assertEquals(1, mathUtils.multiply(1,1)),
+                () -> assertEquals(0, mathUtils.multiply(1,0)),
+                () -> assertEquals(-1, mathUtils.multiply(1,-1)),
+                () -> assertEquals(1, mathUtils.multiply(-1,-1)),
+                () -> assertEquals(0, mathUtils.multiply(0,0))
+        );
     }
 
-    @Test
-    void testSubtractNegatives() {
-        double expected = 0;
-        double actual = mathUtils.subtract(-1, -1);
-
-        assertEquals(expected, actual,
-                "Should subtract two negative numbers.");
-    }
-
-    @Test
-    void testMultiply() {
-        double expected = 10;
-        double actual = mathUtils.multiply(2, 5);
-
-        assertEquals(expected, actual,
-                "Should multiply two numbers.");
-    }
 
     @Test
     void testMultiplyByOne() {
