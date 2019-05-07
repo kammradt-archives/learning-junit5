@@ -15,49 +15,87 @@ class MathUtilsTest {
         mathUtils = new MathUtils();
     }
 
-    @Test
-    void testAdd() {
-        double expected = 0;
-        double actual = mathUtils.add(1, -1);
 
-        assertEquals(expected, actual,
-                "Should add two numbers.");
+    @Nested
+    @DisplayName("Testing method: add()")
+    class AddTest {
 
+        @Test
+        @DisplayName("Adding positive and negative numbers")
+        void testAdd() {
+            double expected = 0;
+            double actual = mathUtils.add(1, -1);
+
+            assertEquals(expected, actual,
+                    "Should add two numbers.");
+
+        }
+
+        @Test
+        @DisplayName("Adding two positive numbers")
+        void testAddPositives() {
+            double expected = 2;
+            double actual = mathUtils.add(1, 1);
+
+            assertEquals(expected, actual,
+                    "Should add two positive numbers.");
+
+        }
+
+        @Test
+        @DisplayName("Adding two negative numbers")
+        void testAddNegatives() {
+            double expected = -2;
+            double actual = mathUtils.add(-1, -1);
+
+            assertEquals(expected, actual,
+                    "Should add two negative numbers.");
+
+        }
+    }
+
+    @Nested
+    @DisplayName("Testing method: subtract()")
+    class SubtractTest {
+
+        @Test
+        @DisplayName("Subtracting positive and negative numbers")
+        void testSubtract() {
+            double expected = 2;
+            double actual = mathUtils.subtract(1, -1);
+
+            assertEquals(expected, actual,
+                    "Should subtract two numbers.");
+
+        }
+
+        @Test
+        @DisplayName("Subtracting two positive numbers")
+        void testSubtractPositives() {
+            double expected = 0;
+            double actual = mathUtils.subtract(1, 1);
+
+            assertEquals(expected, actual,
+                    "Should subtract two positive numbers.");
+
+        }
+
+        @Test
+        @DisplayName("Subtracting two negative numbers")
+        void testSubtractNegatives() {
+            double expected = 0;
+            double actual = mathUtils.subtract(-1, -1);
+
+            assertEquals(expected, actual,
+                    "Should subtract two negative numbers.");
+
+        }
     }
 
     @Test
-    @DisplayName("Adding two positive numbers")
-    void testAddPositives() {
-        double expected = 2;
-        double actual = mathUtils.add(1, 1);
-
-        assertEquals(expected, actual,
-                "Should add two positive numbers.");
-
-    }
-
-    @Test
-    void testAddNegatives() {
-        double expected = -2;
-        double actual = mathUtils.add(-1, -1);
-
-        assertEquals(expected, actual,
-                "Should add two negative numbers.");
-
-    }
-
-    @Test
-    void testSubtract() {
-        double expected = -2;
-        double actual = mathUtils.subtract(-1, 1);
-
-        assertEquals(expected, actual,
-                "Should subtract two numbers.");
-    }
-    
-    @Test
+    @DisplayName("Testing method: multiply()")
     void testMultiplyAssertAll() {
-        assertAll(
+        assertAll (
                 () -> assertEquals(1, mathUtils.multiply(1,1)),
                 () -> assertEquals(0, mathUtils.multiply(1,0)),
                 () -> assertEquals(-1, mathUtils.multiply(1,-1)),
@@ -66,35 +104,8 @@ class MathUtilsTest {
         );
     }
 
-
     @Test
-    void testMultiplyByOne() {
-        double expected = 2;
-        double actual = mathUtils.multiply(2, 1);
-
-        assertEquals(expected, actual,
-                "Should multiply by one.");
-    }
-
-    @Test
-    void testMultiplyByZero() {
-        double expected = 0;
-        double actual = mathUtils.multiply(2, 0);
-
-        assertEquals(expected, actual,
-                "Should multiply by zero.");
-    }
-
-    @Test
-    void testMultiplyByNegative() {
-        double expected = -10;
-        double actual = mathUtils.multiply(2, -5);
-
-        assertEquals(expected, actual,
-                "Should multiply by a negative negative.");
-    }
-
-    @Test
+    @DisplayName("Division of positive number by zero")
     void testDivideByZeroPositiveInfinity() {
         double expected = Double.POSITIVE_INFINITY;
         double actual = mathUtils.divide(1,0);
@@ -104,6 +115,7 @@ class MathUtilsTest {
     }
 
     @Test
+    @DisplayName("Division of negative number by zero")
     void testDivideByZeroNegativeInfinity() {
         double expected = Double.NEGATIVE_INFINITY;
         double actual = mathUtils.divide(-1,0);
