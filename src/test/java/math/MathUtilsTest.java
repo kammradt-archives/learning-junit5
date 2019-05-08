@@ -124,10 +124,14 @@ class MathUtilsTest {
                 "Divide by zero should return negative infinity");
     }
 
-    @Test
-    void testComputeCircleArea() {
+    @RepeatedTest(10)
+    void testComputeCircleArea(RepetitionInfo repetitionInfo) {
         double expected = 314.1592653589793;
         double actual = mathUtils.calculateCircleArea(10);
+
+        if (repetitionInfo.getCurrentRepetition() == 5) {
+            // Half done
+        }
 
         assertEquals(expected, actual,
                 "Should return right circle area");
