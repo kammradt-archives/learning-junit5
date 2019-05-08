@@ -104,7 +104,9 @@ class MathUtilsTest {
         );
     }
 
+
     @Test
+    @Tag("InfiniteRelated")
     @DisplayName("Division of positive number by zero")
     void testDivideByZeroPositiveInfinity() {
         double expected = Double.POSITIVE_INFINITY;
@@ -115,6 +117,7 @@ class MathUtilsTest {
     }
 
     @Test
+    @Tag("InfiniteRelated")
     @DisplayName("Division of negative number by zero")
     void testDivideByZeroNegativeInfinity() {
         double expected = Double.NEGATIVE_INFINITY;
@@ -125,6 +128,7 @@ class MathUtilsTest {
     }
 
     @RepeatedTest(10)
+    @Tag("Circle")
     void testComputeCircleArea(RepetitionInfo repetitionInfo) {
         double expected = 314.1592653589793;
         double actual = mathUtils.calculateCircleArea(10);
